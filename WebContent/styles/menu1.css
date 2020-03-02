@@ -1,0 +1,169 @@
+/* header and footer*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    border: 10px;
+    padding:0;
+    
+}
+
+li,a,button{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+}
+header{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border: 10px;
+    background-color: #ffd369;
+}
+.logo{
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.nav_links{
+    list-style: none;
+    
+}
+
+.nav_links li{
+    display: inline-block;
+    padding: 0px 15px;
+    
+    
+}
+
+.nav_links a{
+    transition: all 0.3 ease 0s;
+}
+
+.nav_links li a:hover{
+    color: green;
+}
+
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+ }
+
+.head{
+    
+    margin-left: 20px;
+    padding: 9px 25px;
+    background-color: rgba(0,136,169,1);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+footer{
+   // height:20px;
+/*	position:fixed;*/
+    width: 100%;
+	bottom: 0;
+	//background-color: #5588a3;
+	font-style: italic;
+    left: 0;
+
+}
+
+/*menu*/
+.container {
+    display: inline-flex;
+    padding: 30px 50px;
+}
+.container > div{
+    flex: 0.5;
+}
+
+.description{
+    padding-top:  150px;
+}
+.myBtn{
+    display: inline-block;
+    margin-top:10px ;
+    margin-left: 130px;
+    padding: 9px 25px;
+    background-color: rgba(0,136,169,1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+/*increase and decrease button*/
+form {
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 150px;
+}
+
+.value-button {
+  display: inline-block;
+  border: 1px solid #ddd;
+  margin: 30px;
+    margin-left: 100px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 11px 0;
+  background: #eee;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.value-button:hover {
+  cursor: pointer;
+}
+
+form #decrease {
+  margin-right: -4px;
+  border-radius: 8px 0 0 8px;
+}
+
+form #increase {
+  margin-left: -4px;
+  border-radius: 0 8px 8px 0;
+}
+
+form #input-wrap {
+  margin: 0px;
+  padding: 0px;
+}
+
+input#number {
+  text-align: center;
+  border: none;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin: 0px;
+  width: 40px;
+  height: 40px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.title{
+	 font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+}
