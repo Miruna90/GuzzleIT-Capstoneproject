@@ -42,7 +42,7 @@
   background-size: 100% 100%;">
 	  <div class="box jumbotron">
         <h2>Order Confirmation</h2>    
-	<p>Thank you for ur Order.</p>
+	<p>Thank you for your Order.</p>
 	<p> Order has been Confirmed.</p>
 	<p> Your order will be ready in 20 min.</p>
             </div>

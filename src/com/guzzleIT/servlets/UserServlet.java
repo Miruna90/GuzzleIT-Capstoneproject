@@ -65,31 +65,6 @@ public class UserServlet extends HttpServlet {
 		doGet(request, response);
 	}
 
-//	private String register(HttpServletRequest request, HttpServletResponse response)
-//			throws ServletException, IOException {
-//		String result = "";
-//		String email = request.getParameter("email");
-//		String password = request.getParameter("password");
-//		request.setAttribute("email", email);
-//		request.setAttribute("password", password);
-//
-////		HttpSession session = request.getSession(true);
-////		session.setAttribute("notloggedIn", true);
-//
-//		Users user = new Users(email, password);
-//		UsersService us = new UsersService();
-//		Boolean loginStatus = us.loginUser(email, password);
-//		if (!loginStatus) {
-//			us.add(user);
-//			System.out.println(user);
-//			result = "/views/login.jsp";
-//		} else {
-//			request.setAttribute("errorMessage", "Email already exits");
-//			result = "/views/register.jsp";
-//		}
-//		return result;
-//	}
-
 	private String register(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String result = "";

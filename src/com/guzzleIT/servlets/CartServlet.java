@@ -117,7 +117,7 @@ public class CartServlet extends HttpServlet {
 				System.out.println("orderDetails = " + orderDetails);
 			}
 		} else {
-
+			request.setAttribute("errorMessage", "Please Login");
 			return "/views/login.jsp";
 		}
 		session.setAttribute("cart", cart);

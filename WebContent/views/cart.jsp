@@ -35,7 +35,7 @@
 			</ul>
 		</nav>
 	</header>
-	<script src="https://use.fontawesome.com/c560c025cf.js"></script>
+	
 	<div class="container" style="padding-top: 20px">
 		<img class="logo" src="/CapstoneProject/Images/order.png" alt="logo"
 		style="max-width: 100%" height="40px" width="40px"padding: 5px 20px 15px 20px;></a></li> <span
@@ -80,6 +80,7 @@
 							<td>$<c:out value='${item.product.price}' /></td>
 							<td>$<c:out value='${item.product.price*item.quantity}' /></td>
 							<td>
+							<script src="https://use.fontawesome.com/c560c025cf.js"></script>
 								<div class="text-right">
 									<form
 										action="/CapstoneProject/CartServlet?request_type=removeItem"

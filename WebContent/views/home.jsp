@@ -116,10 +116,11 @@
 			</div>
 			<div class="bottom-footer" style="font-size: 15px;">
 				<div class="col-md-5">
-					83,Timberview dr,<br />Rochester Hills<br>Michigan-480238
+				<b>Address:</b><br/>
+					83,Timberview<br/>Detroit<br>Michigan-480238
 				</div>
 				<div class="col-md-7">
-					Phone: 4802380533<br> Email: GuzzltIt.com
+					<b>Phone:</b> 2302380533<br><b> Email:</b> GuzzltIt.com
 				</div>
 
 			</div>

@@ -36,8 +36,9 @@
 	</header>
 	<!--        Menu-1-->
 	<div class="container">
+
 		<div>
-			<img src="/CapstoneProject/Images/orange.jpg" alt="Juice"
+			<img src="/CapstoneProject/Images/orange.png" alt="Juice"
 				style="height: 300px; width: 200px; margin: 50px;">
 		</div>
 
@@ -60,69 +61,12 @@
 			</div>
 		</form>
 	</div>
-	<!--        Menu2-->
-	<div class="container">
-
-		<div>
-			<img src="/CapstoneProject/Images/lemonade.jpg" alt="Juice"
-				style="height: 300px; width: 200px; margin: 50px;">
-		</div>
-		<div class="description">
-			<p name="name" style="font-weight:700; font-size: 20px; color: black;">Lemonade</p>
-			<p name="desc"><b>Made of :</b>Mint, Lemon, Ginger, Agava syrup</p>
-			<p><input type="hidden" value=${product.priceCurrencyFormat}
-					name="price"><b>Price = </b>$5.99</p>
-		<!-- 	<p name="size">M</p> -->
-
-		</div>
-
-		<div>
-			<form action="/CapstoneProject/CartServlet?request_type=addItem"
-				method="post">
-				<div style="margin-top: 12px;">
-					<a class="cta" href=""> <input type="hidden" name="productCode"
-						value="4002"> <input type="hidden" name="price" value=5.99>
-						<button class="myBtn" id="myBtn2">Add to Cart</button>
-					</a>
-				</div>
-			</form>
-		</div>
-	</div>
-
-	<!--        Menu3-->
-	<div class="container">
-
-		<div>
-			<img src="/CapstoneProject/Images/choco.jpg" alt="Juice"
-				style="height: 300px; width: 200px; margin: 50px;">
-		</div>
-		<div class="description col-6 col-md-6 col-xs-4"">
-			<p name="name" style="font-weight:700; font-size: 20px; color: black;">Choco Smoothie</p>
-			<p name="desc"><b>Made of :</b>Hazelnut,Date,Cinnamon,Chocolate powder,Ginger</p>
-			<p><input type="hidden" value=${product.priceCurrencyFormat}
-					name="price"><b>Price = </b>$5.99</p>
-		<!-- 	<p name="size">M</p> -->
-
-		</div>
-
-		<div>
-			<form action="/CapstoneProject/CartServlet?request_type=addItem"
-				method="post">
-				<div style="margin-top: 12px;">
-					<a class="cta" href=""> <input type="hidden" name="productCode"
-						value="4003"> <input type="hidden" name="price" value=5.99>
-						<button class="myBtn" id="myBtn2">Add to Cart</button>
-					</a>
-				</div>
-			</form>
-		</div>
-	</div>
 	
 		<!--        Menu4-->
 	<div class="container">
 
 		<div>
-			<img src="/CapstoneProject/Images/citrus.jpg" alt="Juice"
+			<img src="/CapstoneProject/Images/citrus.png" alt="Juice"
 				style="height: 300px; width: 200px; margin: 50px;">
 		</div>
 		<div class="description col-6 col-md-6 col-xs-4"">
@@ -147,11 +91,70 @@
 		</div>
 	</div>
 	
+	<!--        Menu3-->
+	<div class="container">
+
+		<div>
+			<img src="/CapstoneProject/Images/choco.png" alt="Juice"
+				style="height: 300px; width: 200px; margin: 50px;">
+		</div>
+		<div class="description col-6 col-md-6 col-xs-4"">
+			<p name="name" style="font-weight:700; font-size: 20px; color: black;">Choco Smoothie</p>
+			<p name="desc"><b>Made of :</b>Hazelnut,Date,Cinnamon,Chocolate powder,Ginger</p>
+			<p><input type="hidden" value=${product.priceCurrencyFormat}
+					name="price"><b>Price = </b>$5.99</p>
+		<!-- 	<p name="size">M</p> -->
+
+		</div>
+
+		<div>
+			<form action="/CapstoneProject/CartServlet?request_type=addItem"
+				method="post">
+				<div style="margin-top: 12px;">
+					<a class="cta" href=""> <input type="hidden" name="productCode"
+						value="4003"> <input type="hidden" name="price" value=5.99>
+						<button class="myBtn" id="myBtn2">Add to Cart</button>
+					</a>
+				</div>
+			</form>
+		</div>
+	</div>
+	
+	<!--        Menu2-->
+	<div class="container">
+
+		<div>
+			<img src="/CapstoneProject/Images/lemonade.png" alt="Juice"
+				style="height: 300px; width: 200px; margin: 50px;">
+		</div>
+		<div class="description">
+			<p name="name" style="font-weight:700; font-size: 20px; color: black;">Lemonade</p>
+			<p name="desc"><b>Made of :</b>Mint, Lemon, Ginger, Agava syrup</p>
+			<p><input type="hidden" value=${product.priceCurrencyFormat}
+					name="price"><b>Price = </b>$5.99</p>
+		<!-- 	<p name="size">M</p> -->
+
+		</div>
+
+		<div>
+			<form action="/CapstoneProject/CartServlet?request_type=addItem"
+				method="post">
+				<div style="margin-top: 12px;">
+					<a class="cta" href=""> <input type="hidden" name="productCode"
+						value="4002"> <input type="hidden" name="price" value=5.99>
+						<button class="myBtn" id="myBtn2">Add to Cart</button>
+					</a>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	
 		<!--        Menu5-->
 	<div class="container">
 
 		<div>
-			<img src="/CapstoneProject/Images/green.jpg" alt="Juice"
+			<img src="/CapstoneProject/Images/green.png" alt="Juice"
 				style="height: 300px; width: 200px; margin: 50px;">
 		</div>
 		<div class="description col-6 col-md-6 col-xs-4"">
@@ -180,7 +183,7 @@
 	<div class="container">
 
 		<div>
-			<img src="/CapstoneProject/Images/red.jpg" alt="Juice"
+			<img src="/CapstoneProject/Images/red.png" alt="Juice"
 				style="height: 300px; width: 200px; margin: 50px;">
 		</div>
 		<div class="description col-6 col-md-6 col-xs-4"">

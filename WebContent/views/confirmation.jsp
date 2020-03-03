@@ -113,7 +113,7 @@
 				</table>
 				
 			
-				   <p style="margin-left:950px; ">Order Total = $<fmt:formatNumber type="number" maxFractionDigits="2"
+				   <p style="margin-left:760px; ">Order Total = $<fmt:formatNumber type="number" maxFractionDigits="2"
 								value = '${(cart.cartTotal)+((cart.cartTotal)*(6/100))}' /></p>
 				
 			</div> 
@@ -122,7 +122,7 @@
 		<form
 			action="/CapstoneProject/CustomerServlet?request_type=confirmOrder"
 			method="post">
-			<div class="form-group col-lg-4">
+			<div class="form-group col-lg-6">
 				<label>Special Instructions:</label>
 				<textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
 				

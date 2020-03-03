@@ -95,11 +95,11 @@
 							<div class="row">
 								<div class="col-50">
 									<label for="expyear">Exp Year</label> <input type="number"
-										id="expyear" name="expyear" required  placeholder="2020">
+										id="expyear" name="expyear" required  placeholder="2020"  min="2020" size="4">
 								</div>
 								<div class="col-50">
 									<label for="cvv">CVV</label> <input type="number" id="cvv"
-										name="cvv" required  placeholder="567">
+										name="cvv" required  placeholder="567" size="3">
 								</div>
 							</div>
 						</div>
