@@ -19,38 +19,74 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="/CapstoneProject/styles/confirmation1.css">
+<link rel="stylesheet" href="/CapstoneProject/styles/confirmation.css">
 <link
 	href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap"
 	rel="stylesheet">
 </head>
 <body style="background-color: #fff1cf">
 	<header class="header">
-	<a class="logo" href="/CapstoneProject/views/home.jsp"> <img src="/CapstoneProject/Images/new1.png" alt="logo"
+		<a class="logo" href="/CapstoneProject/views/home.jsp"> <img
+			src="/CapstoneProject/Images/new1.png" alt="logo"
 			style="max-width: 100%"></a>
 		<nav>
 			<ul class="nav_links">
-			
+
+
+				<li><a href="/CapstoneProject/views/cart.jsp"> <img
+						class="logo" src="/CapstoneProject/Images/order.png" alt="logo"
+						style="max-width: 100%" height="40px" width="40px"padding: 5px 20px 15px 20px;>Cart
+				</a></li>
 				<li><a href="/CapstoneProject/views/menu.jsp">Menu</a></li>
-				<li><a href="/CapstoneProject/views/home.jsp#contact">Contact</a></li>
-				<li><a href="/CapstoneProject/CustomerServlet?request_type=logout">Logout</a></li>
-			
+				<li><a
+					href="/CapstoneProject/CustomerServlet?request_type=logout">Logout</a></li>
+
 			</ul>
 		</nav>
 	</header>
-	
+
 
 	<div class="container">
-	<h2 style="color: brown">Double check your Order Details</h2>
+		<h2 style="color: brown">Double check your Order Details</h2>
 		<div class="row">
 			<div class="col-md-8">
 				<h3 style="color: palevioletred">Billing Address</h3>
 				<address>
-				
+
 					<form action="/CapstoneProject/views/checkout.jsp">
-    <input type="submit" value="EDIT" class="btn btn-info pull-right" />
-</form>
+						<input type="submit" value="EDIT" class="btn btn-info pull-right" />
+
+					</form>
+
 					<p>
+					<dt>Name</dt>
+					<dd>
+						<c:out value='${customer.firstName}' />
+						<c:out value='${customer.lastName}' />
+					</dd>
+					</p>
+					
+					<p>
+					<dt>Address</dt>
+					<dd>
+						<c:out value='${customer.address}' />
+					</dd>
+					</p>
+						<p>
+					
+					<dt>City </dt>
+					<dd>	<c:out value='${customer.city}' /></dd>
+					</p>
+					<p>
+						<dt>State </dt>
+						<dd><c:out value='${customer.state}' /></dd>
+					</p>
+					<p>
+						<dt>Zipcode </dt>
+						<dd><c:out value='${customer.zipcode}' /></dd>
+					</p>
+					
+				<!--  	<p>
 						Name :
 						<c:out value='${customer.firstName}' />
 						<c:out value='${customer.lastName}' />
@@ -60,6 +96,7 @@
 						<c:out value='${customer.address}' />
 					</p>
 					<p>
+					
 						City :
 						<c:out value='${customer.city}' />
 					</p>
@@ -71,11 +108,12 @@
 						Zipcode :
 						<c:out value='${customer.zipcode}' />
 					</p>
+					-->
 				</address>
 			</div>
 		</div>
 	</div>
-
+<hr>
 	<div class="container">
 		<div class="row">
 			<div>
@@ -111,24 +149,27 @@
 					</c:forEach>
 
 				</table>
-				
-			
-				   <p style="margin-left:760px; ">Order Total = $<fmt:formatNumber type="number" maxFractionDigits="2"
-								value = '${(cart.cartTotal)+((cart.cartTotal)*(6/100))}' /></p>
-				
-			</div> 
+
+
+				<p style="margin-left: 950px;">
+					Order Total = $
+					<fmt:formatNumber type="number" maxFractionDigits="2"
+						value='${(cart.cartTotal)+((cart.cartTotal)*(6/100))}' />
+				</p>
+
+			</div>
 		</div>
 
 		<form
 			action="/CapstoneProject/CustomerServlet?request_type=confirmOrder"
 			method="post">
-			<div class="form-group col-lg-6">
+			<div class="form-group col-lg-4">
 				<label>Special Instructions:</label>
 				<textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
-				
+
 			</div>
 			<input type="submit" value="confirm order"
-				class="btn btn-info pull-right" style="margin-top:60px;" >
+				class="btn btn-info pull-right" style="margin-top: 60px;">
 
 		</form>
 	</div>

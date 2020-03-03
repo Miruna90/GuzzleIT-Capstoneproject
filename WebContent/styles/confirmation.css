@@ -85,3 +85,6 @@ p{
 h3{
     text-decoration: underline palevioletred;
 }
+dt { display:block; float:left; width:100px; text-align: left;}
+dt:after{content:':';}
+dd { display:block;}

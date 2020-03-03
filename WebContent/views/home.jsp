@@ -47,7 +47,7 @@
 				</div>
 				<div class="col-sm-6 col-md-6 col-xs-12">
 
-					<h2 style="margin-top: 160px;">About Us</h2>
+					<h2 style="margin-top: 160px;font-size:23px;">About Us</h2>
 					<p style="font-size: 20px; color: #03225C;">Guzzle It Juice Bar
 						is premier juice bar in Detroit. Independently owned and operated
 						since opening our doors in 2019, thousands of Detroiters make
@@ -65,7 +65,7 @@
 			<div class="thumbnail" style="border: none; padding-top: 0;">
 				<div class="col-sm-6 col-md-6 col-xs-12">
 
-					<h2 style="margin-top: 160px;">Mission</h2>
+					<h2 style="margin-top: 160px;font-size:23px;">Mission</h2>
 					<p style="font-size: 20px; color: #03225C;">The mission of
 						Guzzle It Juices is to provide high quality juices and smoothies
 						to serve our customers. We belive in making juices from locally
@@ -92,7 +92,7 @@
 				</div>
 				<div class="col-sm-6 col-md-6 col-xs-12">
 
-					<h2 style="margin-top: 160px;">Our Philosophy</h2>
+					<h2 style="margin-top: 160px;font-size:23px;">Our Philosophy</h2>
 					<p style="font-size: 20px; color: #03225C;">
 						 Guzzle It Organic Juice Bar believes in making
 						sure our planet is around for the next generation. Our philosophy
@@ -117,10 +117,10 @@
 			<div class="bottom-footer" style="font-size: 15px;">
 				<div class="col-md-5">
 				<b>Address:</b><br/>
-					83,Timberview<br/>Detroit<br>Michigan-480238
+				  3945,Woodland Avenue<br/>Detroit<br>Michigan-480238
 				</div>
 				<div class="col-md-7">
-					<b>Phone:</b> 2302380533<br><b> Email:</b> GuzzltIt.com
+					<b>Phone:</b> 2302380533<br><b> Email:</b> GuzzleIt.com
 				</div>
 
 			</div>
