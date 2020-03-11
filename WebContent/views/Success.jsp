@@ -19,7 +19,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="/CapstoneProject/styles/Success1.css">
+<link rel="stylesheet" href="/CapstoneProject/styles/Success.css">
 <link
 	href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap"
 	rel="stylesheet">

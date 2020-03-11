@@ -1,5 +1,7 @@
-/**
- * 
+/*
+ * Filename: Cart.java
+* Author: Mirunalini
+* 03/10/2020 
  */
 package com.guzzleIT.cart;
 
@@ -15,6 +17,10 @@ import com.guzzleIT.data.OrderDetails;
  */
 
 
+/**
+ * @author drmir
+ *
+ */
 public class Cart implements Serializable {
 
     private List<OrderDetails> items;
