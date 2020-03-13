@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css"  href="CapstoneProject/styles/page1.css">
       <link rel="stylesheet" href="/CapstoneProject/styles/login.css">
+      <script src="/CapstoneProject/Scripts/Login.js"></script>
   </head>
   <body>
     <header class="header">
@@ -21,6 +22,7 @@
                 </ul>
             </nav>
         </header>
+        <div class = "signIn">
       <div class="container-fluid list col-sm-6 col-md-12 col-xs-6 col-lg-12" style="
   width: 100%;
   height: 500px;
@@ -47,7 +49,7 @@
                 <p><a href="/CapstoneProject/views/register.jsp ">Click Here</a> to create a New Account</p>
             </div>
     </div>
-   
+   </div>
     
    <!--   <div class="footer">
   <p style="background-color: gold;">@ copyright Miru2020.</p>
