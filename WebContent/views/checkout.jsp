@@ -24,13 +24,15 @@
 </head>
 <body style="background-color: #fff1cf">
 	<header class="header">
-		<a class="logo" href="/CapstoneProject/views/home.jsp"> <img src="/CapstoneProject/Images/new1.png" alt="logo"
+		<a class="logo" href="/CapstoneProject/views/home.jsp"> <img
+			src="/CapstoneProject/Images/new1.png" alt="logo"
 			style="max-width: 100%"></a>
 		<nav>
 			<ul class="nav_links">
 				<li><a href="/CapstoneProject/views/menu.jsp">Menu</a></li>
 				<li><a href="/CapstoneProject/views/home.jsp#contact">Contact</a></li>
-				<li><a href="/CapstoneProject/CustomerServlet?request_type=logout">Logout</a></li>
+				<li><a
+					href="/CapstoneProject/CustomerServlet?request_type=logout">Logout</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -41,38 +43,45 @@
 	<div class="row">
 		<div class="col-75">
 			<div class="container">
-				<form action="/CapstoneProject/CustomerServlet?request_type=processUser" method="post">
+				<form
+					action="/CapstoneProject/CustomerServlet?request_type=processUser"
+					method="post">
 
 					<div class="row">
 						<div class="col-50">
 							<h3>Billing Address</h3>
 							<label for="fname"><i class="fa fa-user"></i> First Name</label><input
-								type="text" id="fname" name="firstName" value="${customer.firstName}" required  maxlength=20
-								placeholder="Kate M">
-								<label for="lname"><i class="fa fa-user"></i> Last Name</label> <input
-								type="text" id="lname" name="lastName" value="${customer.lastName}" required
-								placeholder="Smith">
-								 <label for="email"><i
+								type="text" id="fname" name="firstName"
+								value="${customer.firstName}" required maxlength=20
+								placeholder="Kate M"> <label for="lname"><i
+								class="fa fa-user"></i> Last Name</label> <input type="text" id="lname"
+								name="lastName" value="${customer.lastName}" required
+								placeholder="Smith"> <label for="email"><i
 								class="fa fa-envelope"></i> Email</label> <input type="text" id="email"
-								name="email" value="${user.email}" required placeholder="Kate@example.com">
-								 <label for="adr"><i class="fa fa-address-card-o"></i> Address</label> <input
-								type="text" id="adr" name="address" value="${customer.address}" required
-								placeholder="123 E. 2nd Street"> 
-								<label for="city"><i class="fa fa-institution"></i> City</label> <input type="text" id="city"
-								name="city" value="${customer.city}" required placeholder="Detroit">
+								name="email" value="${user.email}" required
+								placeholder="Kate@example.com"> <label for="adr"><i
+								class="fa fa-address-card-o"></i> Address</label> <input type="text"
+								id="adr" name="address" value="${customer.address}" required
+								placeholder="123 E. 2nd Street"> <label for="city"><i
+								class="fa fa-institution"></i> City</label> <input type="text" id="city"
+								name="city" value="${customer.city}" required
+								placeholder="Detroit">
 
 							<div class="row">
-							<div class="col-50">
+								<div class="col-50">
 									<label for="phone">Phone</label> <input type="text" id="phone"
-										name="phone"  value="${customer.phone}" required placeholder="343-456-1022">
+										name="phone" value="${customer.phone}" required
+										placeholder="343-456-1022">
 								</div>
 								<div class="col-25">
 									<label for="state">State</label> <input type="text" id="state"
-										name="state"  value="${customer.state}" required placeholder="MI">
+										name="state" value="${customer.state}" required
+										placeholder="MI">
 								</div>
 								<div class="col-25">
 									<label for="zip">Zip</label> <input type="text" id="zip"
-										name="zip"  value="${customer.zipcode}" required placeholder="48024">
+										name="zip" value="${customer.zipcode}" required
+										placeholder="48024">
 								</div>
 							</div>
 						</div>
@@ -88,18 +97,20 @@
 							</div>
 							<label for="cname">Name on Card</label> <input type="text"
 								id="cname" name="cardname" required placeholder="Kate M Smith">
-							<label for="ccnum">Credit card number</label> <input type="number"
-								id="ccnum" name="cardnumber" required  placeholder="9999-8888-7777-6666">
-							<label for="expmonth">Exp Month</label> <input type="text"
-								id="expmonth" name="expmonth" required  placeholder="January">
+							<label for="ccnum">Credit card number</label> <input
+								type="number" id="ccnum" name="cardnumber" required
+								placeholder="9999-8888-7777-6666"> <label for="expmonth">Exp
+								Month</label> <input type="text" id="expmonth" name="expmonth" required
+								placeholder="January">
 							<div class="row">
 								<div class="col-50">
 									<label for="expyear">Exp Year</label> <input type="number"
-										id="expyear" name="expyear" required  placeholder="2020"  min="2020" max="2030">
+										id="expyear" name="expyear" required placeholder="2020"
+										min="2020" max="2030">
 								</div>
 								<div class="col-50">
 									<label for="cvv">CVV</label> <input type="number" id="cvv"
-										name="cvv" required  placeholder="567" min="000" max="999">
+										name="cvv" required placeholder="567" min="000" max="999">
 								</div>
 							</div>
 						</div>
@@ -107,9 +118,9 @@
 					</div>
 					<label> <input type="checkbox" checked="checked"
 						name="sameadr"> Shipping address same as billing
-					</label>
-					 <input type="submit" value="Continue to checkout" class="btn btn-info">
-					</form> 
+					</label> <input type="submit" value="Continue to checkout"
+						class="btn btn-info">
+				</form>
 				</form>
 			</div>
 		</div>

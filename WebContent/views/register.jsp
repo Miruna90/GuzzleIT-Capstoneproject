@@ -23,7 +23,8 @@
 <body>
 
 	<header class="header">
-		<a class="logo" href="/CapstoneProject/views/home.jsp"> <img src="/CapstoneProject/Images/new1.png" alt="logo"
+		<a class="logo" href="/CapstoneProject/views/home.jsp"> <img
+			src="/CapstoneProject/Images/new1.png" alt="logo"
 			style="max-width: 100%"></a>
 		<nav>
 			<ul class="nav_links">
@@ -33,14 +34,12 @@
 			</ul>
 		</nav>
 	</header>
-	<div class="container-fluid list col-sm-6 col-md-12 col-xs-6 col-lg-12" style="
-  width: 100%;
-  height: 500px;
-  background-image: url('/CapstoneProject/Images/register.jpg');
-  background-size: 100% 100%;">
+	<div class="container-fluid list col-sm-6 col-md-12 col-xs-6 col-lg-12"
+		style="width: 100%; height: 500px; background-image: url('/CapstoneProject/Images/register.jpg'); background-size: 100% 100%;">
 
 		<div class="signup-form">
-			<form action="/CapstoneProject/UserServlet?request_type=register" method="post">
+			<form action="/CapstoneProject/UserServlet?request_type=register"
+				method="post">
 				<h2>Sign Up</h2>
 				<p style="color: red; text-align: center;">${errorMessage}</p>
 				<p>Please fill in this form to create an account!</p>
@@ -51,17 +50,19 @@
 				</div> -->
 				<div class="form-group">
 					<label for="email">Email</label> <input type="email" name="email"
-						class="form-control" id="Email" placeholder="Email" required="required">
+						class="form-control" id="Email" placeholder="Email"
+						required="required">
 				</div>
 				<div class="form-group">
-					<label for="password">Password</label> <input type="password" name="password"
-						class="form-control" id="password" placeholder="Password" required="required">
+					<label for="password">Password</label> <input type="password"
+						name="password" class="form-control" id="password"
+						placeholder="Password" required="required">
 				</div>
 				<div class="form-group">
-					<button type="submit" value="REGISTER" class="btn btn-success btn-block"
-						style="align-items: center">Signup</button>
+					<button type="submit" value="REGISTER"
+						class="btn btn-success btn-block" style="align-items: center">Signup</button>
 				</div>
-				
+
 			</form>
 		</div>
 

@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<link rel="stylesheet"
+<link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -23,64 +23,65 @@
 	href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap"
 	rel="stylesheet">
 </head>
-<body style="background-color: #fff1cf; font-size:15px">
+<body style="background-color: #fff1cf; font-size: 15px">
 	<header class="header">
-		<a class="logo" href="/CapstoneProject/views/home.jsp"> <img src="/CapstoneProject/Images/new1.png" alt="logo"
+		<a class="logo" href="/CapstoneProject/views/home.jsp"> <img
+			src="/CapstoneProject/Images/new1.png" alt="logo"
 			style="max-width: 100%"></a>
 		<nav>
 			<ul class="nav_links">
 				<li><a href="/CapstoneProject/views/menu.jsp"">Menu</a></li>
 				<li><a href="/CapstoneProject/views/home.jsp#contact">Contact</a></li>
-				<li><a href="/CapstoneProject/CustomerServlet?request_type=logout">Logout</a></li>
+				<li><a
+					href="/CapstoneProject/CustomerServlet?request_type=logout">Logout</a></li>
 			</ul>
 		</nav>
 	</header>
-	
+
 	<div class="container" style="padding-top: 20px">
 		<img class="logo" src="/CapstoneProject/Images/order.png" alt="logo"
-		style="max-width: 100%" height="40px" width="40px"padding: 5px 20px 15px 20px;></a></li> <span
-			style="font-size: 25px">Shopping cart </span>
+			style="max-width: 100%" height="40px" width="40px"padding: 5px 20px 15px 20px;></a>
+		</li> <span style="font-size: 25px">Shopping cart </span>
 
 		<form action="/CapstoneProject/views/menu.jsp" method="post">
 			<a href="/CapstoneProject/views/menu.jsp"
-				class="btn btn-info pull-right">Continue
-				shopping</a> <input type="hidden" name="action" value="shop"> <input
+				class="btn btn-info pull-right">Continue shopping</a> <input
+				type="hidden" name="action" value="shop"> <input
 				type="hidden" value="Continue Shopping">
 		</form>
 		<div class="clearfix"></div>
 		<section>
-			<table class="table" style="margin-top:10px;">
-				<thead class="bg-warning" style="font-size:18px;">
+			<table class="table" style="margin-top: 10px;">
+				<thead class="bg-warning" style="font-size: 18px;">
 					<tr>
 						<th scope="col">Quantity</th>
 						<th scope="col">Name</th>
 						<th scope="col">Description</th>
 						<th scope="col">Price</th>
 						<th scope="col">Amount</th>
-					
+
 
 					</tr>
 				</thead>
-				<tbody class="body" style="font-size:11px;" >
+				<tbody class="body" style="font-size: 11px;">
 					<c:forEach var="item" items="${cart.items}">
-						<tr >
+						<tr>
 							<td>
 								<form
 									action="/CapstoneProject/CartServlet?request_type=updateItem"
 									method="post">
 									<input type="hidden" name="productCode"
 										value="<c:out value ='${item.product.productCode}'/>">
-									<input type=text size="4" style="text-align:center;" name="quantity"
-										value="<c:out value='${item.quantity}'/>" id="quantity">
-									<input type="submit" value="Update">
+									<input type=text size="4" style="text-align: center;"
+										name="quantity" value="<c:out value='${item.quantity}'/>"
+										id="quantity"> <input type="submit" value="Update">
 								</form>
 							</td>
 							<td><c:out value='${item.product.name}' /></td>
 							<td><c:out value='${item.product.description}' /></td>
 							<td>$<c:out value='${item.product.price}' /></td>
 							<td>$<c:out value='${item.product.price*item.quantity}' /></td>
-							<td>
-							<script src="https://use.fontawesome.com/c560c025cf.js"></script>
+							<td><script src="https://use.fontawesome.com/c560c025cf.js"></script>
 								<div class="text-right">
 									<form
 										action="/CapstoneProject/CartServlet?request_type=removeItem"
@@ -94,8 +95,7 @@
 											<i class="fa fa-trash" aria-hidden="true"></i>
 										</button>
 									</form>
-								</div>
-							</td>
+								</div></td>
 						</tr>
 					</c:forEach>
 				</tbody>
@@ -114,9 +114,10 @@
 			</tr>
 
 			<form action="/CapstoneProject/views/checkout.jsp" method="post">
-				<a href="/CapstoneProject/views/checkout.jsp"class="btn btn-info pull-right	">Checkout</a>
-				<input type="hidden" name="action" value="checkout"> <input
-					type="hidden" value="Checkout">
+				<a href="/CapstoneProject/views/checkout.jsp"
+					class="btn btn-info pull-right	">Checkout</a> <input type="hidden"
+					name="action" value="checkout"> <input type="hidden"
+					value="Checkout">
 			</form>
 		</section>
 </body>

@@ -34,13 +34,15 @@ public class PopulateDatabase {
 	}
 
 	private void run() {
-		
-		Product product1 = new Product("4001","Orange Morning","Carrot, Lemon, Apple, Ginger","medium",5.99);
-		Product product2 = new Product("4002","Lemonade","Mint, Lemon, Ginger, Agava syrup","medium",5.99);
-		Product product3 = new Product("4003","Choco Smoothie","Hazelnut,Date,Cinnamon,Chocolate powder,Ginger","medium",5.99);
-		Product product4 = new Product("4004","Citrus Smoothie","Banana, Date, Orange,Ginger,Hemp seeds","medium",5.99);
-		Product product5 = new Product("4005","Green day","Apple, Cucumber, lime, Spinach","medium",5.99);
-		Product product6 = new Product("4006","Red Juice","Lemon, Apple, Beet, Carrot","medium",5.99);
+
+		Product product1 = new Product("4001", "Orange Morning", "Carrot, Lemon, Apple, Ginger", "medium", 5.99);
+		Product product2 = new Product("4002", "Lemonade", "Mint, Lemon, Ginger, Agava syrup", "medium", 5.99);
+		Product product3 = new Product("4003", "Choco Smoothie", "Hazelnut,Date,Cinnamon,Chocolate powder,Ginger",
+				"medium", 5.99);
+		Product product4 = new Product("4004", "Citrus Smoothie", "Banana, Date, Orange,Ginger,Hemp seeds", "medium",
+				5.99);
+		Product product5 = new Product("4005", "Green day", "Apple, Cucumber, lime, Spinach", "medium", 5.99);
+		Product product6 = new Product("4006", "Red Juice", "Lemon, Apple, Beet, Carrot", "medium", 5.99);
 		ProductService ps = new ProductService();
 		ps.add(product1);
 		ps.add(product2);
@@ -48,7 +50,7 @@ public class PopulateDatabase {
 		ps.add(product4);
 		ps.add(product5);
 		ps.add(product6);
-	    
+
 //		OrderDetails orderdetails = new OrderDetails(1, 5.99,product1);
 //		OrderDetailsService ods1 = new OrderDetailsService();
 //		ods1.add(orderdetails);
@@ -87,10 +89,6 @@ public class PopulateDatabase {
 //		CustomerService cs = new CustomerService();
 //		cs.add(customer);
 //		cs.add(customer1);
-		
-		
-		
-		
-		
+
 	}
 }

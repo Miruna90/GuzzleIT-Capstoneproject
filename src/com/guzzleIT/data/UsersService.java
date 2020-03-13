@@ -15,7 +15,11 @@ import javax.persistence.Query;
  *
  */
 public class UsersService extends AbstractService {
-	// add
+	/**
+	 * add
+	 * 
+	 * @param user
+	 */
 	public void add(Users user) {
 		em.getTransaction().begin();
 		em.persist(user);
@@ -23,7 +27,12 @@ public class UsersService extends AbstractService {
 
 	}
 
-	// find user by ID
+	/**
+	 * findUserById
+	 * 
+	 * @param id
+	 * @return user
+	 */
 	public Users findUserById(int id) {
 		Query query = this.em.createNamedQuery("FindById");
 		this.em.getTransaction().begin();
@@ -32,63 +41,73 @@ public class UsersService extends AbstractService {
 		System.out.println("\n" + user);
 		return user;
 	}
-	//find user by email
+
+	/**
+	 * findUserByEmail
+	 * 
+	 * @param email
+	 * @return user
+	 */
+	@SuppressWarnings("unchecked")
 	public Users findUserByEmail(String email) {
 		Query query = this.em.createNamedQuery("FindByEmail");
 		System.out.println("inside findUserByEmail method");
-		//em.getTransaction().begin();
-		List<Users> q = query
-				.setParameter("email",email)
-				.getResultList();
+		List<Users> q = query.setParameter("email", email).getResultList();
 		System.out.println("query result is " + q);
 		Users result = null;
-		//Users user = em.find(Users.class, email);
 		try {
-            result = (Users) query.getSingleResult();
-        } catch (NoResultException ex) {
-            return null;
-        } 
-		//em.getTransaction().commit();
-        System.out.println("result = "+ result);
-        return result;
+			result = (Users) query.getSingleResult();
+		} catch (NoResultException ex) {
+			return null;
+		}
+		System.out.println("result = " + result);
+		return result;
 	}
-	// check email exits
+
+	/**
+	 * emailExists
+	 * 
+	 * @param email
+	 */
 	public boolean emailExists(String email) {
-//		em.getTransaction().begin();
-        Users u = findUserByEmail(email); 
-        System.out.println("user ="+u);
-//        em.getTransaction().commit();
-        if (u == null) {
-        	return false;
-        }else {
-        	return true;
-        }
-    } 
-	// find registered user
-	public boolean loginUser(String email,String password ) {
-		Query query = this.em.createNamedQuery("LoginUser");
-	
-		System.out.println(query);
-		this.em.getTransaction().begin();
-		List<Users> result = query
-				.setParameter("email",email)
-				.setParameter("password",password)
-				.getResultList();
-		System.out.println(result.toString());
-		//System.out.println(em.toString());
-		//System.out.println(result);
-		//Boolean valid = em.contains(user);
-		this.em.getTransaction().commit();
-		if (result.isEmpty()) {
-			
+		Users u = findUserByEmail(email);
+		System.out.println("user =" + u);
+		if (u == null) {
 			return false;
-			
 		} else {
 			return true;
 		}
 	}
 
-	// delete user by ID
+	/**
+	 * loginUser
+	 * 
+	 * @param email
+	 * @param password
+	 */
+	@SuppressWarnings("unchecked")
+	public boolean loginUser(String email, String password) {
+		Query query = this.em.createNamedQuery("LoginUser");
+
+		System.out.println(query);
+		this.em.getTransaction().begin();
+		List<Users> result = query.setParameter("email", email).setParameter("password", password).getResultList();
+		System.out.println(result.toString());
+		this.em.getTransaction().commit();
+		if (result.isEmpty()) {
+
+			return false;
+
+		} else {
+			return true;
+		}
+	}
+
+	/**
+	 * deleteById
+	 * 
+	 * @param id
+	 */
 	public void deleteById(int id) {
 		Query query = em.createNamedQuery("DeleteById");
 		em.getTransaction().begin();
@@ -98,7 +117,14 @@ public class UsersService extends AbstractService {
 		cleanup();
 	}
 
-	// update - user will be able to update any field of a record except the ID
+	/**
+	 * update
+	 * 
+	 * @param id
+	 * @param email
+	 * @return password
+	 * 
+	 */
 	public boolean update(int id, String email, String password) {
 		em.getTransaction().begin();
 		Users foundUser = em.find(Users.class, id);
@@ -110,7 +136,9 @@ public class UsersService extends AbstractService {
 
 	}
 
-	// clearAll
+	/**
+	 * clearAll
+	 */
 	public void clearAll() {
 		this.em.getTransaction().begin();
 		em.createQuery("DELETE FROM Users").executeUpdate();
@@ -118,7 +146,10 @@ public class UsersService extends AbstractService {
 		em.remove(user);
 		em.getTransaction().commit();
 	}
-	
+
+	/**
+	 * close
+	 */
 	public void close() {
 		cleanup();
 	}

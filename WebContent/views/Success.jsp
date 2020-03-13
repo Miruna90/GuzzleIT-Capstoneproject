@@ -26,26 +26,25 @@
 </head>
 <body style="background-color: #fff1cf">
 	<header class="header">
-	<a class="logo" href="/CapstoneProject/views/home.jsp"> <img src="/CapstoneProject/Images/new1.png" alt="logo"
+		<a class="logo" href="/CapstoneProject/views/home.jsp"> <img
+			src="/CapstoneProject/Images/new1.png" alt="logo"
 			style="max-width: 100%"></a>
 		<nav>
 			<ul class="nav_links">
 				<li><a href="/CapstoneProject/views/home.jsp#contact">Contact</a>
-				<li><a href="/CapstoneProject/CustomerServlet?request_type=logout">Logout</a></li>
+				<li><a
+					href="/CapstoneProject/CustomerServlet?request_type=logout">Logout</a></li>
 			</ul>
 		</nav>
 	</header>
-	<div class="container" style="
-  width: 100%;
-  height: 500px;
-  background-image: url('/CapstoneProject/Images/confirm.jpg');
-  background-size: 100% 100%;">
-	  <div class="box jumbotron">
-        <h2>Order Confirmation</h2>    
-	<p>Thank you for your Order.</p>
-	<p> Order has been Confirmed.</p>
-	<p> Your order will be ready in 20 min.</p>
-            </div>
+	<div class="container"
+		style="width: 100%; height: 500px; background-image: url('/CapstoneProject/Images/confirm.jpg'); background-size: 100% 100%;">
+		<div class="box jumbotron">
+			<h2>Order Confirmation</h2>
+			<p>Thank you for your Order.</p>
+			<p>Order has been Confirmed.</p>
+			<p>Your order will be ready in 20 min.</p>
+		</div>
 	</div>
 	<footer class="site-footer col-sm-6 col-md-12 col-xs-6 col-lg-12">
 		<div class="container">
@@ -66,5 +65,5 @@
 		</div>
 	</footer>
 
-	</body>
-	</html>
+</body>
+</html>

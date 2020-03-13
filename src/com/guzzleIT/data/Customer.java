@@ -23,16 +23,16 @@ import javax.persistence.criteria.Order;
  * Entity implementation class for Entity: Customer
  *
  */
- @Entity
+@Entity
 @NamedQueries({ @NamedQuery(query = "select c from Customer c where c.id=:id", name = "FindCustomersById"),
-	@NamedQuery(query = "delete from Customer c WHERE c.id=:id", name = "DeleteCustomersById"),
-	@NamedQuery(query = "delete from Customer", name = "DeleteAllCustomers") })
+		@NamedQuery(query = "delete from Customer c WHERE c.id=:id", name = "DeleteCustomersById"),
+		@NamedQuery(query = "delete from Customer", name = "DeleteAllCustomers") })
 
 public class Customer implements Serializable {
 
-	private static final long serialVersionUID = 1L; 
+	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	@Column(name = "first_name")
 	private String firstName;
@@ -43,11 +43,10 @@ public class Customer implements Serializable {
 	private String city;
 	private String state;
 	private String zipcode;
-	 @OneToOne
+	@OneToOne
 	private Users users;
-	
-	
-	 @OneToMany(targetEntity = Orders.class)
+
+	@OneToMany(targetEntity = Orders.class)
 	private List<Orders> orderList;
 //	 @OneToMany(mappedBy = "Customer")
 //		private List<Orders> orderList;
@@ -55,8 +54,6 @@ public class Customer implements Serializable {
 	public Customer() {
 		super();
 	}
-	
-	
 
 	/**
 	 * @param id
@@ -72,8 +69,8 @@ public class Customer implements Serializable {
 	 * @param users
 	 * @param orderList
 	 */
-	public Customer(String firstName, String lastName, String phone,
-			String address, String city, String state, String zipcode, Users users, List<Orders> orderList) {
+	public Customer(String firstName, String lastName, String phone, String address, String city, String state,
+			String zipcode, Users users, List<Orders> orderList) {
 		super();
 		this.setFirstName(firstName);
 		this.setLastName(lastName);
@@ -85,9 +82,6 @@ public class Customer implements Serializable {
 		this.setUsers(users);
 		this.setOrderList(orderList);
 	}
-
-
-
 
 	/**
 	 * @return the firstName
@@ -173,7 +167,6 @@ public class Customer implements Serializable {
 		this.state = state;
 	}
 
-	
 	/**
 	 * @return the users
 	 */
@@ -195,16 +188,12 @@ public class Customer implements Serializable {
 		return zipcode;
 	}
 
-
-
 	/**
 	 * @param zipcode the zipcode to set
 	 */
 	public void setZipcode(String zipcode) {
 		this.zipcode = zipcode;
 	}
-
-
 
 	/**
 	 * @return the orderList
@@ -227,8 +216,6 @@ public class Customer implements Serializable {
 		return serialVersionUID;
 	}
 
-
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -245,8 +232,6 @@ public class Customer implements Serializable {
 		result = prime * result + ((zipcode == null) ? 0 : zipcode.hashCode());
 		return result;
 	}
-
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -310,8 +295,6 @@ public class Customer implements Serializable {
 		return true;
 	}
 
-
-
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -337,8 +320,6 @@ public class Customer implements Serializable {
 		builder.append(orderList);
 		builder.append("]");
 		return builder.toString();
-	} 
-	
-	
+	}
+
 }
-	

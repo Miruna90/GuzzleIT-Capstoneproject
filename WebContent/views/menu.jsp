@@ -27,10 +27,13 @@
 			style="max-width: 100%"></a>
 		<nav>
 			<ul class="nav_links">
-			    <li><a href="/CapstoneProject/views/cart.jsp"> <img class="logo" src="/CapstoneProject/Images/order.png" alt="logo"
-		style="max-width: 100%" height="40px" width="40px"padding: 5px 20px 15px 20px;>Cart</a></li>
+				<li><a href="/CapstoneProject/views/cart.jsp"> <img
+						class="logo" src="/CapstoneProject/Images/order.png" alt="logo"
+						style="max-width: 100%" height="40px" width="40px"padding: 5px 20px 15px 20px;>Cart
+				</a></li>
 				<li><a href="/CapstoneProject/views/home.jsp#contact">Contact</a></li>
-				<li><a href="/CapstoneProject/CustomerServlet?request_type=logout">Logout</a></li>
+				<li><a
+					href="/CapstoneProject/CustomerServlet?request_type=logout">Logout</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -43,11 +46,18 @@
 		</div>
 
 		<div class="description">
-			<p name="name" style="font-weight:700; font-size: 20px; color: black;">Orange Morning</p>
-			<p name="desc"><b>Made of :</b>Carrot, Lemon, Apple, Ginger</p>
-			<p><input type="hidden" value=${product.priceCurrencyFormat}
-					name="price"><b>Price = </b>$5.99</p>
-		<!-- 	<p name="size">M</p> -->
+			<p name="name"
+				style="font-weight: 700; font-size: 20px; color: black;">Orange
+				Morning</p>
+			<p name="desc">
+				<b>Made of :</b>Carrot, Lemon, Apple, Ginger
+			</p>
+			<p>
+				<input type="hidden" value=${product.priceCurrencyFormat
+					}
+					name="price"><b>Price = </b>$5.99
+			</p>
+			<!-- 	<p name="size">M</p> -->
 
 		</div>
 
@@ -61,8 +71,8 @@
 			</div>
 		</form>
 	</div>
-	
-		<!--        Menu4-->
+
+	<!--        Menu4-->
 	<div class="container">
 
 		<div>
@@ -70,11 +80,18 @@
 				style="height: 300px; width: 200px; margin: 50px;">
 		</div>
 		<div class="description col-6 col-md-6 col-xs-4"">
-			<p name="name" style="font-weight:700; font-size: 20px; color: black;">Citrus Smoothie</p>
-			<p name="desc"><b>Made of :</b>Banana, Date, Orange,Ginger,Hemp seeds</p>
-			<p><input type="hidden" value=${product.priceCurrencyFormat}
-					name="price"><b>Price = </b>$5.99</p>
-		<!-- 	<p name="size">M</p> -->
+			<p name="name"
+				style="font-weight: 700; font-size: 20px; color: black;">Citrus
+				Smoothie</p>
+			<p name="desc">
+				<b>Made of :</b>Banana, Date, Orange,Ginger,Hemp seeds
+			</p>
+			<p>
+				<input type="hidden" value=${product.priceCurrencyFormat
+					}
+					name="price"><b>Price = </b>$5.99
+			</p>
+			<!-- 	<p name="size">M</p> -->
 
 		</div>
 
@@ -90,7 +107,7 @@
 			</form>
 		</div>
 	</div>
-	
+
 	<!--        Menu3-->
 	<div class="container">
 
@@ -99,11 +116,18 @@
 				style="height: 300px; width: 200px; margin: 50px;">
 		</div>
 		<div class="description col-6 col-md-6 col-xs-4"">
-			<p name="name" style="font-weight:700; font-size: 20px; color: black;">Choco Smoothie</p>
-			<p name="desc"><b>Made of :</b>Hazelnut,Date,Cinnamon,Chocolate powder,Ginger</p>
-			<p><input type="hidden" value=${product.priceCurrencyFormat}
-					name="price"><b>Price = </b>$5.99</p>
-		<!-- 	<p name="size">M</p> -->
+			<p name="name"
+				style="font-weight: 700; font-size: 20px; color: black;">Choco
+				Smoothie</p>
+			<p name="desc">
+				<b>Made of :</b>Hazelnut,Date,Cinnamon,Chocolate powder,Ginger
+			</p>
+			<p>
+				<input type="hidden" value=${product.priceCurrencyFormat
+					}
+					name="price"><b>Price = </b>$5.99
+			</p>
+			<!-- 	<p name="size">M</p> -->
 
 		</div>
 
@@ -119,7 +143,7 @@
 			</form>
 		</div>
 	</div>
-	
+
 	<!--        Menu2-->
 	<div class="container">
 
@@ -128,11 +152,17 @@
 				style="height: 300px; width: 200px; margin: 50px;">
 		</div>
 		<div class="description">
-			<p name="name" style="font-weight:700; font-size: 20px; color: black;">Lemonade</p>
-			<p name="desc"><b>Made of :</b>Mint, Lemon, Ginger, Agava syrup</p>
-			<p><input type="hidden" value=${product.priceCurrencyFormat}
-					name="price"><b>Price = </b>$5.99</p>
-		<!-- 	<p name="size">M</p> -->
+			<p name="name"
+				style="font-weight: 700; font-size: 20px; color: black;">Lemonade</p>
+			<p name="desc">
+				<b>Made of :</b>Mint, Lemon, Ginger, Agava syrup
+			</p>
+			<p>
+				<input type="hidden" value=${product.priceCurrencyFormat
+					}
+					name="price"><b>Price = </b>$5.99
+			</p>
+			<!-- 	<p name="size">M</p> -->
 
 		</div>
 
@@ -149,8 +179,8 @@
 		</div>
 	</div>
 
-	
-		<!--        Menu5-->
+
+	<!--        Menu5-->
 	<div class="container">
 
 		<div>
@@ -158,11 +188,18 @@
 				style="height: 300px; width: 200px; margin: 50px;">
 		</div>
 		<div class="description col-6 col-md-6 col-xs-4"">
-			<p name="name" style="font-weight:700; font-size: 20px; color: black;">Green day</p>
-			<p name="desc"><b>Made of :</b>Apple, Cucumber, lime, Spinach</p>
-			<p><input type="hidden" value=${product.priceCurrencyFormat}
-					name="price"><b>Price = </b>$5.99</p>
-		<!-- 	<p name="size">M</p> -->
+			<p name="name"
+				style="font-weight: 700; font-size: 20px; color: black;">Green
+				day</p>
+			<p name="desc">
+				<b>Made of :</b>Apple, Cucumber, lime, Spinach
+			</p>
+			<p>
+				<input type="hidden" value=${product.priceCurrencyFormat
+					}
+					name="price"><b>Price = </b>$5.99
+			</p>
+			<!-- 	<p name="size">M</p> -->
 
 		</div>
 
@@ -187,11 +224,18 @@
 				style="height: 300px; width: 200px; margin: 50px;">
 		</div>
 		<div class="description col-6 col-md-6 col-xs-4"">
-			<p name="name" style="font-weight:700; font-size: 20px; color: black;">Red Juice</p>
-			<p name="desc"><b>Made of :</b> Lemon, Apple, Beet, Carrot</p>
-			<p><input type="hidden" value=${product.priceCurrencyFormat}
-					name="price"><b>Price = </b>$5.99</p>
-		<!-- 	<p name="size">M</p> -->
+			<p name="name"
+				style="font-weight: 700; font-size: 20px; color: black;">Red
+				Juice</p>
+			<p name="desc">
+				<b>Made of :</b> Lemon, Apple, Beet, Carrot
+			</p>
+			<p>
+				<input type="hidden" value=${product.priceCurrencyFormat
+					}
+					name="price"><b>Price = </b>$5.99
+			</p>
+			<!-- 	<p name="size">M</p> -->
 
 		</div>
 

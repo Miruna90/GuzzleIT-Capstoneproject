@@ -65,28 +65,33 @@
 						<c:out value='${customer.lastName}' />
 					</dd>
 					</p>
-					
+
 					<p>
 					<dt>Address</dt>
 					<dd>
 						<c:out value='${customer.address}' />
 					</dd>
 					</p>
-						<p>
-					
-					<dt>City </dt>
-					<dd>	<c:out value='${customer.city}' /></dd>
+					<p>
+					<dt>City</dt>
+					<dd>
+						<c:out value='${customer.city}' />
+					</dd>
 					</p>
 					<p>
-						<dt>State </dt>
-						<dd><c:out value='${customer.state}' /></dd>
+					<dt>State</dt>
+					<dd>
+						<c:out value='${customer.state}' />
+					</dd>
 					</p>
 					<p>
-						<dt>Zipcode </dt>
-						<dd><c:out value='${customer.zipcode}' /></dd>
+					<dt>Zipcode</dt>
+					<dd>
+						<c:out value='${customer.zipcode}' />
+					</dd>
 					</p>
-					
-				<!--  	<p>
+
+					<!--  	<p>
 						Name :
 						<c:out value='${customer.firstName}' />
 						<c:out value='${customer.lastName}' />
@@ -113,7 +118,7 @@
 			</div>
 		</div>
 	</div>
-<hr>
+	<hr>
 	<div class="container">
 		<div class="row">
 			<div>

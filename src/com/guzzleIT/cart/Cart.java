@@ -16,21 +16,20 @@ import com.guzzleIT.data.OrderDetails;
  *
  */
 
-
 /**
  * @author drmir
  *
  */
 public class Cart implements Serializable {
 
-    private List<OrderDetails> items;
-    double cartTotal;
+	private List<OrderDetails> items;
+	double cartTotal;
 
-    public Cart() {
-        items = new ArrayList<>();
-        }
-    
-    /**
+	public Cart() {
+		items = new ArrayList<>();
+	}
+
+	/**
 	 * @return the items
 	 */
 	public List<OrderDetails> getItems() {
@@ -44,53 +43,70 @@ public class Cart implements Serializable {
 		this.items = items;
 	}
 
+	/**
+	 * @return the items
+	 */
+	public int getCount() {
+		return items.size();
+	}
 
-    public int getCount() {
-        return items.size();
-    }
-    
-    public void setCartTotal() {
-    	
-    	double orderTotal = 0;
-    	for ( int i = 0; i < items.size(); i++) {
-    		OrderDetails od = items.get(i);
-    		orderTotal += od.getPrice() * od.getQuantity();
-    	}
-    	
-    	this.cartTotal = orderTotal;
-    	
-    }
-    
-    public double getCartTotal() {
-    	return cartTotal;
-    }
+	/**
+	 * setCartTotal
+	 */
+	public void setCartTotal() {
 
-    public void addItem(OrderDetails item) {
-        //If the item already exists in the cart, only the quantity is changed.
-        String code = item.getProduct().getProductCode();
-        int quantity = item.getQuantity();
-        System.out.println("quantity:"+quantity);
-        for (int i = 0; i < items.size(); i++) {
-            OrderDetails orderDetails = items.get(i);
-            if (orderDetails.getProduct().getProductCode().equals(code)) {
-            	orderDetails.setQuantity(quantity);
-                return;
-            }
-        }
-        items.add(item);
-    }
+		double orderTotal = 0;
+		for (int i = 0; i < items.size(); i++) {
+			OrderDetails od = items.get(i);
+			orderTotal += od.getPrice() * od.getQuantity();
+		}
 
-    public void removeItem(OrderDetails item) {
-        String code = item.getProduct().getProductCode();
-        for (int i = 0; i < items.size(); i++) {
-        	OrderDetails orderDetails = items.get(i);
-            if (orderDetails.getProduct().getProductCode().equals(code)) {
-                items.remove(i);
-                return;
-            }
-        }
-    }
+		this.cartTotal = orderTotal;
 
-	
+	}
+
+	/**
+	 * @return cartTotal
+	 */
+	public double getCartTotal() {
+		return cartTotal;
+	}
+
+	/**
+	 * addItems
+	 * 
+	 * @param item
+	 */
+	public void addItem(OrderDetails item) {
+		// If the item already exists in the cart, only the quantity is changed.
+		String code = item.getProduct().getProductCode();
+		int quantity = item.getQuantity();
+		System.out.println("quantity:" + quantity);
+		for (int i = 0; i < items.size(); i++) {
+			OrderDetails orderDetails = items.get(i);
+			if (orderDetails.getProduct().getProductCode().equals(code)) {
+				orderDetails.setQuantity(quantity);
+				return;
+			}
+		}
+		items.add(item);
+	}
+
+	/**
+	 * removeItems
+	 * 
+	 * @param item
+	 */
+
+	public void removeItem(OrderDetails item) {
+		String code = item.getProduct().getProductCode();
+		for (int i = 0; i < items.size(); i++) {
+			OrderDetails orderDetails = items.get(i);
+			if (orderDetails.getProduct().getProductCode().equals(code)) {
+				items.remove(i);
+				return;
+			}
+		}
+	}
+
 }
-

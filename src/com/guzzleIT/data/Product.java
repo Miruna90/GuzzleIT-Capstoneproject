@@ -19,30 +19,25 @@ import javax.persistence.*;
  */
 @Entity
 @NamedQueries({ @NamedQuery(query = "select p from Product p where p.id=:id", name = "FindProductsById"),
-	@NamedQuery(query = "delete from Product p WHERE p.id=:id", name = "DeleteProductsById"),
-	@NamedQuery(query = "delete from Product", name = "DELETE FROM Product"),
-	@NamedQuery(query="SELECT p FROM Product p WHERE p.productCode = :productCode",name="SelectProductsByCode")})
-
+		@NamedQuery(query = "delete from Product p WHERE p.id=:id", name = "DeleteProductsById"),
+		@NamedQuery(query = "delete from Product", name = "DELETE FROM Product"),
+		@NamedQuery(query = "SELECT p FROM Product p WHERE p.productCode = :productCode", name = "SelectProductsByCode") })
 
 public class Product implements Serializable {
 
-	private static final long serialVersionUID = 1L;  
+	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String productCode;
 	private String name;
 	private String description;
 	private String size;
 	private double price;
-	
-
 
 	public Product() {
 		super();
-	} 
-
-
+	}
 
 	/**
 	 * @param id
@@ -61,47 +56,78 @@ public class Product implements Serializable {
 		this.setDescription(description);
 		this.setSize(size);
 		this.setPrice(price);
-		
+
 	}
 
-
-
+	/**
+	 * @return the id
+	 */
 	public Integer getId() {
-		return this.id;
+		return id;
 	}
 
+	/**
+	 * @param id the id to set
+	 */
 	public void setId(Integer id) {
 		this.id = id;
-	}   
-	public String getName() {
-		return this.name;
 	}
 
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * @param name the name to set
+	 */
 	public void setName(String name) {
 		this.name = name;
-	}   
-	public String getDescription() {
-		return this.description;
 	}
 
+	/**
+	 * @return the description
+	 */
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * @param description the description to set
+	 */
 	public void setDescription(String description) {
 		this.description = description;
-	}   
-	public String getSize() {
-		return this.size;
 	}
 
+	/**
+	 * @return the size
+	 */
+	public String getSize() {
+		return size;
+	}
+
+	/**
+	 * @param size the size to set
+	 */
 	public void setSize(String size) {
 		this.size = size;
-	}   
-	public double getPrice() {
-		return this.price;
 	}
 
+	/**
+	 * @return the price
+	 */
+	public double getPrice() {
+		return price;
+	}
+
+	/**
+	 * @param price the price to set
+	 */
 	public void setPrice(double price) {
 		this.price = price;
 	}
-
 
 	/**
 	 * @return the productCode
@@ -110,8 +136,6 @@ public class Product implements Serializable {
 		return productCode;
 	}
 
-
-
 	/**
 	 * @param productCode the productCode to set
 	 */
@@ -119,15 +143,13 @@ public class Product implements Serializable {
 		this.productCode = productCode;
 	}
 
-
-
 	/**
 	 * @return the serialversionuid
 	 */
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
+
 	public String getPriceCurrencyformat() {
 		NumberFormat currency = NumberFormat.getCurrencyInstance();
 		return currency.format(price);
@@ -206,7 +228,4 @@ public class Product implements Serializable {
 		return builder.toString();
 	}
 
-
-
-   
 }

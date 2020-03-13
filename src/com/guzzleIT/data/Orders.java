@@ -21,30 +21,27 @@ import javax.persistence.*;
  */
 @Entity
 @NamedQueries({ @NamedQuery(query = "select o from Orders o where o.id=:id", name = "FindOrdersById"),
-	@NamedQuery(query = "delete from Orders o WHERE o.id=:id", name = "DeleteOrdersById"),
-	@NamedQuery(query = "delete from Orders", name = "DeleteAllOrders") })
-
+		@NamedQuery(query = "delete from Orders o WHERE o.id=:id", name = "DeleteOrdersById"),
+		@NamedQuery(query = "delete from Orders", name = "DeleteAllOrders") })
 
 public class Orders implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
-	   
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-//	@Column(name = "order_date")
-//	private String orderDate;
-	   @Temporal(TemporalType.DATE)
-	    private Date orderDate;
+
+	@Temporal(TemporalType.DATE)
+	private Date orderDate;
 
 	@Column(name = "order_status")
 	private String orderStatus;
 	@Column(name = "spl_instructions")
 	private String splInstructions;
-	
-	@OneToMany(targetEntity = OrderDetails.class)
-		private List<OrderDetails> odList;
 
+	@OneToMany(targetEntity = OrderDetails.class)
+	private List<OrderDetails> odList;
 
 	/**
 	 * @param id
@@ -53,8 +50,7 @@ public class Orders implements Serializable {
 	 * @param splInstructions
 	 * @param odList
 	 */
-	public Orders(Integer id, Date orderDate, String orderStatus, String splInstructions,
-			List<OrderDetails> odList) {
+	public Orders(Integer id, Date orderDate, String orderStatus, String splInstructions, List<OrderDetails> odList) {
 		super();
 		this.id = id;
 		this.orderDate = orderDate;
@@ -210,9 +206,4 @@ public class Orders implements Serializable {
 		return builder.toString();
 	}
 
-
-	
-
-	
-   
 }

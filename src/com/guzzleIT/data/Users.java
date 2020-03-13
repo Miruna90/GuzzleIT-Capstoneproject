@@ -16,26 +16,25 @@ import javax.persistence.*;
  */
 @Entity
 @NamedQueries({ @NamedQuery(query = "select u from Users u where u.id=:id", name = "FindById"),
-	 @NamedQuery(query = "select u from Users u where u.email=:email", name = "FindByEmail"),
-	@NamedQuery(query = "delete from Users u WHERE u.id=:id", name = "DeleteById"),
-	@NamedQuery(query = "delete from Users", name = "DeleteAllUsers"),
-	@NamedQuery(query ="select u from Users u where u.email =:email", name ="FindUser"),
-	@NamedQuery(query ="select u.email,u.password from Users u where u.email =:email AND u.password=:password", name ="LoginUser")})
-
+		@NamedQuery(query = "select u from Users u where u.email=:email", name = "FindByEmail"),
+		@NamedQuery(query = "delete from Users u WHERE u.id=:id", name = "DeleteById"),
+		@NamedQuery(query = "delete from Users", name = "DeleteAllUsers"),
+		@NamedQuery(query = "select u from Users u where u.email =:email", name = "FindUser"),
+		@NamedQuery(query = "select u.email,u.password from Users u where u.email =:email AND u.password=:password", name = "LoginUser") })
 
 public class Users implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String email;
 	private String password;
-	
 
 	public Users() {
 		super();
-	} 
+	}
+
 	/**
 	 * @param id
 	 * @param userName
@@ -47,29 +46,56 @@ public class Users implements Serializable {
 		this.setEmail(email);
 		this.setPassword(password);
 	}
+
+	/**
+	 * @return the id
+	 */
 	public Integer getId() {
-		return this.id;
+		return id;
 	}
 
+	/**
+	 * @param id the id to set
+	 */
 	public void setId(Integer id) {
 		this.id = id;
-	}     
-	public String getEmail() {
-		return this.email;
 	}
 
+	/**
+	 * @return the email
+	 */
+	public String getEmail() {
+		return email;
+	}
+
+	/**
+	 * @param email the email to set
+	 */
 	public void setEmail(String email) {
 		this.email = email;
-	}   
-	public String getPassword() {
-		return this.password;
 	}
 
+	/**
+	 * @return the password
+	 */
+	public String getPassword() {
+		return password;
+	}
+
+	/**
+	 * @param password the password to set
+	 */
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
+
+	/**
+	 * @return the serialversionuid
+	 */
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -79,6 +105,7 @@ public class Users implements Serializable {
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -105,6 +132,7 @@ public class Users implements Serializable {
 			return false;
 		return true;
 	}
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -117,6 +145,5 @@ public class Users implements Serializable {
 		builder.append("]");
 		return builder.toString();
 	}
-	
-   
+
 }

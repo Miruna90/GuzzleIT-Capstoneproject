@@ -18,63 +18,75 @@ import javax.persistence.*;
  */
 @Entity
 @NamedQueries({ @NamedQuery(query = "select o from OrderDetails o where o.id=:id", name = "FindOrderDetailsById"),
-	@NamedQuery(query = "delete from OrderDetails o WHERE o.id=:id", name = "DeleteOrderDetailsById"),
-	@NamedQuery(query = "delete from OrderDetails", name = "DeleteAllOrderDetails") })
+		@NamedQuery(query = "delete from OrderDetails o WHERE o.id=:id", name = "DeleteOrderDetailsById"),
+		@NamedQuery(query = "delete from OrderDetails", name = "DeleteAllOrderDetails") })
 
 public class OrderDetails implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
-	   
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private int quantity;
 	private double price;
 	@OneToOne
 	private Product product;
 
- 
 	public OrderDetails() {
 		super();
-	} 
-	
-	
+	}
+
 	/**
 	 * @param id
 	 * @param quantity
 	 * @param price
 	 */
-	public OrderDetails(int quantity, double price,Product product) {
+	public OrderDetails(int quantity, double price, Product product) {
 		super();
 		this.setQuantity(quantity);
 		this.setPrice(price);
 		this.setProduct(product);
-		
+
 	}
 
+	/**
+	 * @return the id
+	 */
 
 	public Integer getId() {
 		return this.id;
 	}
 
+	/**
+	 * @param id the id to set
+	 */
+
 	public void setId(Integer id) {
 		this.id = id;
-	}   
+	}
+
+	/**
+	 * @return the quantity
+	 */
 	public int getQuantity() {
 		return this.quantity;
 	}
 
+	/**
+	 * @param quantity the quantity to set
+	 */
+
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	
+
 	/**
 	 * @return the price
 	 */
 	public double getPrice() {
 		return price;
 	}
-
 
 	/**
 	 * @param price the price to set
@@ -90,17 +102,12 @@ public class OrderDetails implements Serializable {
 		return product;
 	}
 
-
 	/**
 	 * @param product the product to set
 	 */
 	public void setProduct(Product product) {
 		this.product = product;
 	}
-	
-	
-
-	
 
 	@Override
 	public int hashCode() {
@@ -114,7 +121,6 @@ public class OrderDetails implements Serializable {
 		result = prime * result + quantity;
 		return result;
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -142,7 +148,6 @@ public class OrderDetails implements Serializable {
 		return true;
 	}
 
-
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -157,17 +162,27 @@ public class OrderDetails implements Serializable {
 		builder.append("]");
 		return builder.toString();
 	}
+
+	/**
+	 * getTotal
+	 * 
+	 * @return total
+	 */
 	public double getTotal() {
-		Product product =new Product();
-		double total = product.getPrice()*quantity;
+		Product product = new Product();
+		double total = product.getPrice() * quantity;
 		return total;
 	}
-	
+
+	/**
+	 * getTotalCurrencyFormat
+	 * 
+	 * @return TotalCurrencyFormat
+	 */
+
 	public String getTotalCurrencyFormat() {
 		NumberFormat currency = NumberFormat.getCurrencyInstance();
 		return currency.format(this.getTotal());
 	}
 
-
-   
 }

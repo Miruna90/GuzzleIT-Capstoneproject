@@ -16,12 +16,20 @@ import javax.persistence.Persistence;
 public class AbstractService {
 	protected EntityManagerFactory emf;
 	protected EntityManager em;
-	
+
+	/**
+	 * AbstractService
+	 *
+	 */
 	public AbstractService() {
 		emf = Persistence.createEntityManagerFactory("CapstoneProject");
 		em = emf.createEntityManager();
 	}
-	
+
+	/**
+	 * cleanup
+	 *
+	 */
 	protected void cleanup() {
 		em.close();
 		emf.close();
