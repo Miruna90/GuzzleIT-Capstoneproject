@@ -180,8 +180,9 @@ public class OrderDetails implements Serializable {
 	 */
 	public double getTotal() {
 		Product product = new Product();
-		double total = product.getPrice() * quantity;
-		return total;
+		Total total =()->{return product.getPrice()*quantity;};
+		//double total = product.getPrice() * quantity;
+		return total.sum();
 	}
 
 	/**

@@ -45,8 +45,6 @@ public class CustomerServlet extends HttpServlet {
 		
 		String requestURI = request.getRequestURI();
 		String requestType = request.getParameter("request_type");
-		System.out.println("requestType = "+requestType);
-		System.out.println(requestURI);
 		String url="";
 		
 		if(requestType.equalsIgnoreCase("logout")) {
@@ -63,16 +61,14 @@ public class CustomerServlet extends HttpServlet {
 
 		String requestURI = request.getRequestURI();
 		String requestType = request.getParameter("request_type");
-		System.out.println("requestType = "+requestType);
-		System.out.println(requestURI);
 		
 		String url="";
 		if(requestType.equalsIgnoreCase("processUser")) {
-			System.out.println("Process User");
+		
 			url=processUser(request,response);
 		}
 		if(requestType.equalsIgnoreCase("confirmOrder")) {
-			System.out.println("Confirm Order");
+			
 			url=confirmOrder(request,response);
 		}
 
@@ -81,7 +77,6 @@ public class CustomerServlet extends HttpServlet {
 	//confirm Order
 	private String confirmOrder(HttpServletRequest request, HttpServletResponse response) {
 		String url ="/views/Success.jsp";
-		System.out.println("Inside the confirm order");
 		
 		HttpSession session = request.getSession();
 		  Customer customer = (Customer) session.getAttribute("customer");      
@@ -89,7 +84,6 @@ public class CustomerServlet extends HttpServlet {
 
 	        java.util.Date today = new java.util.Date();
 	        String instructions = request.getParameter("comment");
-	        System.out.println(instructions);
 
 	        Orders orders = new Orders();
 	        OrdersService os = new OrdersService();
@@ -104,7 +98,6 @@ public class CustomerServlet extends HttpServlet {
 	        customer.setOrderList(order);
 	        CustomerService cs = new CustomerService();
 	        cs.add(customer);
-	        System.out.println("Order Added");
 		
 		return url;
 	}
@@ -115,13 +108,10 @@ public class CustomerServlet extends HttpServlet {
     	
     	String url = "/views/confirmation.jsp";
     	
-    	System.out.println(" Inside the Process User");
-    	
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
         String phone = request.getParameter("phone");
         String email = request.getParameter("email");
-        System.out.println("email="+email);
         String address = request.getParameter("address");
         String city = request.getParameter("city");
         String state = request.getParameter("state");
@@ -134,8 +124,6 @@ public class CustomerServlet extends HttpServlet {
         if (customer == null) {
         	customer = new Customer();
         }
-       //Users users= customer.getUsers();
-     
         customer.setFirstName(firstName);
         customer.setLastName(lastName);
         customer.setPhone(phone);
@@ -144,20 +132,14 @@ public class CustomerServlet extends HttpServlet {
         customer.setState(state);
         customer.setZipcode(zipcode);
         
-        //customer.setUsers(users);
-        
         UsersService us = new UsersService();
         CustomerService cs = new CustomerService();
         Users user = new Users();
         
         if (us.emailExists(email)) {
-        	System.out.println(email);
-        	System.out.println(us.emailExists(email));
         	user = us.findUserByEmail(email);
-        	System.out.println(user);
         	customer.setUsers(user);
             cs.add(customer);
-            System.out.println(customer);
         }        
        session.setAttribute("customer", customer);  
         return url;
@@ -165,10 +147,8 @@ public class CustomerServlet extends HttpServlet {
     
     private String logout(HttpServletRequest request,
             HttpServletResponse response) {
-    	System.out.println("Inside the logout") ;
     	String url ="/views/login.jsp";
     	HttpSession session = request.getSession();
-    	System.out.println(session);
     	session.invalidate();
 				return url;
     	
