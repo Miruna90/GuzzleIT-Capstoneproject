@@ -77,7 +77,7 @@ public class ProductService extends AbstractService {
 		foundProduct.setName(result.get(0).getName());
 		foundProduct.setDescription(result.get(0).getDescription());
 		foundProduct.setPrice(result.get(0).getPrice());
-		foundProduct.setSize(result.get(0).getSize());
+		//foundProduct.setSize(result.get(0).getSize());
 		foundProduct.setId(result.get(0).getId());
 
 		System.out.println(foundProduct);
@@ -99,12 +99,11 @@ public class ProductService extends AbstractService {
 	 * @param price
 	 * 
 	 */
-	public boolean update(int id, String name, String description, String size, double price) {
+	public boolean update(int id, String name, String description, double price) {
 		em.getTransaction().begin();
 		Product foundProduct = em.find(Product.class, id);
 		foundProduct.setName(name);
 		foundProduct.setDescription(description);
-		foundProduct.setSize(size);
 		foundProduct.setPrice(price);
 		em.getTransaction().commit();
 		cleanup();

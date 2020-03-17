@@ -48,8 +48,6 @@ public class Customer implements Serializable {
 
 	@OneToMany(targetEntity = Orders.class)
 	private List<Orders> orderList;
-//	 @OneToMany(mappedBy = "Customer")
-//		private List<Orders> orderList;
 
 	public Customer() {
 		super();

@@ -20,6 +20,7 @@ import com.guzzleIT.data.OrderDetailsService;
 import com.guzzleIT.data.Product;
 import com.guzzleIT.data.ProductService;
 import com.guzzleIT.data.Users;
+import com.guzzleIT.exceptions.QuantityException;
 
 /**
  * Servlet implementation class CartServlet
@@ -61,12 +62,22 @@ public class CartServlet extends HttpServlet {
 		String url = "";
 		if (requestType.equalsIgnoreCase("addItem")) {
 			System.out.println("add Item");
-			url = addItem(request, response);
+			try {
+				url = addItem(request, response);
+			} catch (QuantityException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 
 		if (requestType.equalsIgnoreCase("updateItem")) {
 			System.out.println("Update Item");
-			url = updateItem(request, response);
+			try {
+				url = updateItem(request, response);
+			} catch (QuantityException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 
 		if (requestType.equalsIgnoreCase("removeItem")) {
@@ -83,7 +94,7 @@ public class CartServlet extends HttpServlet {
 	}
 
 	// Add the Item to the cart
-	private String addItem(HttpServletRequest request, HttpServletResponse response) {
+	private String addItem(HttpServletRequest request, HttpServletResponse response) throws QuantityException {
 		System.out.println("inside addItem method");
 		String url = "/views/cart.jsp";
 
@@ -131,7 +142,7 @@ public class CartServlet extends HttpServlet {
 	}
 
 	// Update the quantity
-	private String updateItem(HttpServletRequest request, HttpServletResponse response) {
+	private String updateItem(HttpServletRequest request, HttpServletResponse response) throws QuantityException {
 		System.out.println("Inside the update");
 		String url = "/views/cart.jsp";
 		String quantityString = request.getParameter("quantity");

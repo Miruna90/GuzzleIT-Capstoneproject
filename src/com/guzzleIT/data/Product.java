@@ -32,7 +32,7 @@ public class Product implements Serializable {
 	private String productCode;
 	private String name;
 	private String description;
-	private String size;
+	final static String SIZE="M";
 	private double price;
 
 	public Product() {
@@ -54,7 +54,6 @@ public class Product implements Serializable {
 		this.setProductCode(productCode);
 		this.setName(name);
 		this.setDescription(description);
-		this.setSize(size);
 		this.setPrice(price);
 
 	}
@@ -105,14 +104,7 @@ public class Product implements Serializable {
 	 * @return the size
 	 */
 	public String getSize() {
-		return size;
-	}
-
-	/**
-	 * @param size the size to set
-	 */
-	public void setSize(String size) {
-		this.size = size;
+		return SIZE;
 	}
 
 	/**
@@ -166,7 +158,7 @@ public class Product implements Serializable {
 		temp = Double.doubleToLongBits(price);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		result = prime * result + ((productCode == null) ? 0 : productCode.hashCode());
-		result = prime * result + ((size == null) ? 0 : size.hashCode());
+		result = prime * result + ((SIZE == null) ? 0 : SIZE.hashCode());
 		return result;
 	}
 
@@ -201,10 +193,10 @@ public class Product implements Serializable {
 				return false;
 		} else if (!productCode.equals(other.productCode))
 			return false;
-		if (size == null) {
-			if (other.size != null)
+		if (SIZE == null) {
+			if (other.SIZE != null)
 				return false;
-		} else if (!size.equals(other.size))
+		} else if (!SIZE.equals(other.SIZE))
 			return false;
 		return true;
 	}
@@ -221,7 +213,7 @@ public class Product implements Serializable {
 		builder.append(", description=");
 		builder.append(description);
 		builder.append(", size=");
-		builder.append(size);
+		builder.append(SIZE);
 		builder.append(", price=");
 		builder.append(price);
 		builder.append("]");

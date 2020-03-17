@@ -12,6 +12,8 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import com.guzzleIT.exceptions.QuantityException;
+
 /**
  * Entity implementation class for Entity: OrderProductDetails
  *
@@ -41,8 +43,9 @@ public class OrderDetails implements Serializable {
 	 * @param id
 	 * @param quantity
 	 * @param price
+	 * @throws QuantityException 
 	 */
-	public OrderDetails(int quantity, double price, Product product) {
+	public OrderDetails(int quantity, double price, Product product) throws QuantityException {
 		super();
 		this.setQuantity(quantity);
 		this.setPrice(price);
@@ -77,8 +80,15 @@ public class OrderDetails implements Serializable {
 	 * @param quantity the quantity to set
 	 */
 
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
+	public void setQuantity(int quantity) throws QuantityException {
+		if (quantity < 0) {
+			throw new QuantityException();
+		}
+		if (quantity > 10) {
+			throw new QuantityException("Quantity greater than 10 is not accepted");
+		} else {
+			this.quantity = quantity;
+		}
 	}
 
 	/**

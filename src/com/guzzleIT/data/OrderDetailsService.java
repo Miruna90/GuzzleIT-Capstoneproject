@@ -9,6 +9,8 @@ import java.util.List;
 
 import javax.persistence.Query;
 
+import com.guzzleIT.exceptions.QuantityException;
+
 /**
  * @author drmir
  *
@@ -62,9 +64,10 @@ public class OrderDetailsService extends AbstractService {
 	 * @param quantity
 	 * @param price
 	 * @param product
+	 * @throws QuantityException 
 	 * 
 	 */
-	public boolean update(Integer id, int quantity, double price, Product product) {
+	public boolean update(Integer id, int quantity, double price, Product product) throws QuantityException {
 		em.getTransaction().begin();
 		OrderDetails foundOrderDetails = em.find(OrderDetails.class, id);
 		foundOrderDetails.setId(id);

@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.guzzleIT.data.OrderDetails;
+import com.guzzleIT.exceptions.QuantityException;
 
 /**
  * @author drmir
@@ -76,8 +77,9 @@ public class Cart implements Serializable {
 	 * addItems
 	 * 
 	 * @param item
+	 * @throws QuantityException 
 	 */
-	public void addItem(OrderDetails item) {
+	public void addItem(OrderDetails item) throws QuantityException {
 		// If the item already exists in the cart, only the quantity is changed.
 		String code = item.getProduct().getProductCode();
 		int quantity = item.getQuantity();
