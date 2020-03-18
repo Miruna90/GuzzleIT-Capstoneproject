@@ -27,35 +27,35 @@ public class ProductService extends AbstractService {
 		em.getTransaction().commit();
 
 	}
-
-	/**
-	 * findUserById
-	 * 
-	 * @param id
-	 * @return product
-	 */
-	public Product findProductById(int id) {
-		Query query = this.em.createNamedQuery("FindProductsById");
-		this.em.getTransaction().begin();
-		Product product = em.find(Product.class, id);
-		em.getTransaction().commit();
-		System.out.println("\n" + product);
-		return product;
-	}
-
-	/**
-	 * deleteById
-	 * 
-	 * @param id
-	 */
-	public void deleteById(int id) {
-		Query query = em.createNamedQuery("DeleteProductsById");
-		em.getTransaction().begin();
-		Product foundProduct = em.find(Product.class, id);
-		em.remove(foundProduct);
-		em.getTransaction().commit();
-		cleanup();
-	}
+//
+//	/**
+//	 * findUserById
+//	 * 
+//	 * @param id
+//	 * @return product
+//	 */
+//	public Product findProductById(int id) {
+//		Query query = this.em.createNamedQuery("FindProductsById");
+//		this.em.getTransaction().begin();
+//		Product product = em.find(Product.class, id);
+//		em.getTransaction().commit();
+//		System.out.println("\n" + product);
+//		return product;
+//	}
+//
+//	/**
+//	 * deleteById
+//	 * 
+//	 * @param id
+//	 */
+//	public void deleteById(int id) {
+//		Query query = em.createNamedQuery("DeleteProductsById");
+//		em.getTransaction().begin();
+//		Product foundProduct = em.find(Product.class, id);
+//		em.remove(foundProduct);
+//		em.getTransaction().commit();
+//		cleanup();
+//	}
 
 	/**
 	 * update
@@ -84,10 +84,6 @@ public class ProductService extends AbstractService {
 		return foundProduct;
 	}
 
-	public Product selectPrice(double price) {
-		return null;
-
-	}
 
 	/**
 	 * update

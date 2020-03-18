@@ -5,6 +5,7 @@
  */
 package com.guzzleIT.data;
 
+import java.text.NumberFormat;
 import java.util.List;
 
 import javax.persistence.Query;
@@ -64,7 +65,7 @@ public class OrderDetailsService extends AbstractService {
 	 * @param quantity
 	 * @param price
 	 * @param product
-	 * @throws QuantityException 
+	 * @throws QuantityException
 	 * 
 	 */
 	public boolean update(Integer id, int quantity, double price, Product product) throws QuantityException {
@@ -89,6 +90,33 @@ public class OrderDetailsService extends AbstractService {
 		OrderDetails orderDetails = new OrderDetails();
 		em.remove(orderDetails);
 		em.getTransaction().commit();
+	}
+
+	/**
+	 * getTotal
+	 * 
+	 * @return total
+	 */
+	public double getTotal() {
+		Product product = new Product();
+		OrderDetails od = new OrderDetails();
+
+		Total total = () -> {
+			return product.getPrice() * od.getQuantity();
+		};
+
+		return total.sum();
+	}
+
+	/**
+	 * getTotalCurrencyFormat
+	 * 
+	 * @return TotalCurrencyFormat
+	 */
+
+	public String getTotalCurrencyFormat() {
+		NumberFormat currency = NumberFormat.getCurrencyInstance();
+		return currency.format(this.getTotal());
 	}
 
 	/**

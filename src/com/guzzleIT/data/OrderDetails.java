@@ -78,17 +78,16 @@ public class OrderDetails implements Serializable {
 
 	/**
 	 * @param quantity the quantity to set
+	 * @throws QuantityException 
 	 */
 
 	public void setQuantity(int quantity) throws QuantityException {
-		if (quantity < 0) {
-			throw new QuantityException();
-		}
-		if (quantity > 10) {
-			throw new QuantityException("Quantity greater than 10 is not accepted");
-		} else {
+		if(quantity<0) {
+			throw new QuantityException("Quantity muct be greater than 0");
+		}else {
 			this.quantity = quantity;
 		}
+		
 	}
 
 	/**
@@ -171,29 +170,6 @@ public class OrderDetails implements Serializable {
 		builder.append(product);
 		builder.append("]");
 		return builder.toString();
-	}
-
-	/**
-	 * getTotal
-	 * 
-	 * @return total
-	 */
-	public double getTotal() {
-		Product product = new Product();
-		Total total =()->{return product.getPrice()*quantity;};
-		//double total = product.getPrice() * quantity;
-		return total.sum();
-	}
-
-	/**
-	 * getTotalCurrencyFormat
-	 * 
-	 * @return TotalCurrencyFormat
-	 */
-
-	public String getTotalCurrencyFormat() {
-		NumberFormat currency = NumberFormat.getCurrencyInstance();
-		return currency.format(this.getTotal());
 	}
 
 }
